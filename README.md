@@ -33,11 +33,3 @@ npm install
 ```
 npm start
 ```
-
-## 二、开发规范
-
-[开发规范文档](./docs/base/norms.md)
-
-## 三、目录结构
-
-## 四、配置
