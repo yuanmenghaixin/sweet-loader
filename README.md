@@ -33,3 +33,7 @@ npm install
 ```
 npm start
 ```
+
+## 开发使用文档
+
+[Sweet UI 开发文档](https://github.com/sweetui/sweet-ui-docs)
