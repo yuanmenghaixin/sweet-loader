@@ -72,7 +72,7 @@
         "@sweetui/sweet": "^2.0.9",
         "@sweetui/sweet-style": "^0.0.5",
         "axios": "^0.17.1",
-        "element-ui": "^2.0.7",
+        "element-ui": "^2.0.10",
         "vue": "^2.5.9",
         "vue-i18n": "^7.3.2",
         "vue-router": "^3.0.1",
@@ -82,7 +82,11 @@
         "node": ">= 6.0.0",
         "npm": ">= 5.0.0"
     },
-    "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"],
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not ie <= 8"
+    ],
     "author": "SweetUI Group",
     "license": "MIT"
 }
