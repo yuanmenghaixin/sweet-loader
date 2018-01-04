@@ -9,7 +9,7 @@ let config = {
     common: {
         babelInclude: [],
         assetsSubDirectory: 'assets',
-        theme: 'demo-theme'
+        theme: 'demo_theme'
     },
     // 前端开发环境配置
     dev: {

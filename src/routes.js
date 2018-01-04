@@ -18,7 +18,7 @@ export default {
         {
             path: '/ajaxdemo',
             name: 'ajaxDemo',
-            component: require('@/modules/demo/ajaxDemo').default
+            component: require('@/modules/demo/ajax_demo').default
         }
     ]
 };

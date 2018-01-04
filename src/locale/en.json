@@ -1,1 +1,1 @@
-{"app":{"welcome":"welcome to your Sweet APP!"},"i18nModule":{"text":"this is i18n module","message":"two way binding content"}}
+{"app":{"welcome":"welcome to your Sweet APP!"},"i18nModule":{"text":"this is i18n module","message":"two way binding content"},"subI18n":{"message":"subI18n message"}}

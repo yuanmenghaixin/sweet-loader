@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import { sweetStore, sweetRouter, SWTOOL } from '@sweetui/sweet';
 import App from '@/modules/demo/app';
-import Ajax from '@/modules/demo-plugin/ajax';
-import '@/modules/demo-theme/index.scss';
+import Ajax from '@/modules/demo_plugin/ajax';
+import '@/modules/demo_theme/index.scss';
 
 Vue.use(SWTOOL);
 

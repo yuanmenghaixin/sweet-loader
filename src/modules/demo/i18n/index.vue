@@ -24,6 +24,11 @@
             <el-date-picker v-model="value1" type="date" placeholder="选择日期" :picker-options="pickerOptions0">
             </el-date-picker>
         </div>
+
+        <div class="block">
+            <h2>子组件</h2>
+            <sub-i18n></sub-i18n>
+        </div>
     </div>
 </template>
 <script>
@@ -35,6 +40,7 @@ import {
     DatePicker
 } from 'element-ui';
 import store from './store';
+import subI18n from './sub_i18n';
 
 Vue.use(Input);
 Vue.use(RadioGroup);
@@ -52,7 +58,6 @@ export default {
     },
     data() {
         return {
-            message: this.$t('i18nModule.message'),
             pickerOptions0: {
                 disabledDate(time) {
                     return time.getTime() < Date.now() - 8.64e7;
@@ -62,12 +67,18 @@ export default {
             locale: this.$store.state.language
         };
     },
+    computed: {
+        message() {
+            return this.$t('i18nModule.message');
+        }
+    },
     watch: {
         locale(val) {
-            this.$store.dispatch('updateLang', { lang: val, i18n: this.$i18n }).then(() => {
-                this.message = this.$t('i18nModule.message');
-            });
+            this.$store.dispatch('updateLang', { lang: val, i18n: this.$i18n });
         }
+    },
+    components: {
+        subI18n
     }
 };
 
