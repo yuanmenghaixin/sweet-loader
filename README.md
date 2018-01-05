@@ -1,6 +1,6 @@
 # Sweet Loader
 
-> 结合Vue 2.x 版本开发的 Sweet 前端开发框架
+> 基于Vue 2.x 版本开发的 Sweet 前端开发框架
 >
 > 当前版本：v2.1.0
 
