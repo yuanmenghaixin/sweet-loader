@@ -1,27 +1,42 @@
 /**
  * webpack 配置文件
  */
-const path                 = require('path');
-const webpack              = require('webpack');
-const HtmlWebpackPlugin    = require('html-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
-const utils                = require('../utils');
-const publicPath           = global.env === 'dev' ? '/assets/' : './assets/';
-const devtool              = global.env !== 'production' ? 'cheap-module-eval-source-map' : 'source-map';
-const entry                = global.env === 'dev' ? { app: ['webpack-hot-middleware/client?reload=true&noInfo=true', path.join(process.cwd(), 'src/main.js')] } : { app: path.join(process.cwd(), 'src/main.js') };
-const ExtractTextPlugin    = require('extract-text-webpack-plugin');
-const extractCSS           = new ExtractTextPlugin({ filename: 'css/[name].[contenthash].css' });
-const isProduction         = global.env === 'production';
-const UglifyJsPlugin       = require('uglifyjs-webpack-plugin');
-const config               = require('../../config');
-
+const utils = require('../utils');
+const publicPath = global.env === 'dev' ? '/assets/' : './assets/';
+const devtool =
+    global.env !== 'production' ? 'cheap-module-eval-source-map' : 'source-map';
+const entry =
+    global.env === 'dev'
+        ? {
+              app: [
+                  'webpack-hot-middleware/client?reload=true&noInfo=true',
+                  path.join(process.cwd(), 'src/main.js')
+              ]
+          }
+        : { app: path.join(process.cwd(), 'src/main.js') };
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const extractCSS = new ExtractTextPlugin({
+    filename: 'css/[name].[contenthash].css'
+});
+const isProduction = global.env === 'production';
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const config = require('../../config');
 
 function resolve(dir) {
     return path.join(process.cwd(), dir);
 }
-const initBabelInclude = [resolve('src'), resolve('test'), resolve('node_modules/@sweet'), resolve('node_modules/element-ui/src/utils/')];
+const initBabelInclude = [
+    resolve('src'),
+    resolve('test'),
+    resolve('node_modules/@sweet'),
+    resolve('node_modules/element-ui/src/utils/')
+];
 
-config.common.babelInclude.map(function (item) {
+config.common.babelInclude.map(function(item) {
     return resolve(item);
 });
 
@@ -40,18 +55,23 @@ const webpackConfig = {
     resolve: {
         extensions: ['.js', '.vue', '.json'],
         alias: {
-            'vue$': 'vue/dist/vue.esm.js',
+            vue$: 'vue/dist/vue.esm.js',
             '@': resolve('src'),
-            'style$': resolve('src/styles/themes')
+            style$: resolve('src/styles/themes')
         },
         symlinks: false
     },
     module: {
-        rules: [{
+        rules: [
+            {
                 test: /\.(js|vue)$/,
                 loader: 'eslint-loader',
                 enforce: 'pre',
-                include: [resolve('src'), resolve('test'), resolve('node_modules/sweet')],
+                include: [
+                    resolve('src'),
+                    resolve('test'),
+                    resolve('node_modules/sweet')
+                ],
                 options: {
                     formatter: require('eslint-friendly-formatter')
                 }
@@ -107,40 +127,35 @@ const webpackConfig = {
             },
             {
                 test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'postcss-loader'
-                ]
+                use: ['style-loader', 'css-loader', 'postcss-loader']
             },
             {
                 test: /\.less$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'less-loader'
-                ]
+                use: ['style-loader', 'css-loader', 'less-loader']
             },
             {
                 test: /\.scss$/,
-                use: [{
-                    loader: 'style-loader' // 将 JS 字符串生成为 style 节点
-                }, {
-                    loader: 'css-loader' // 将 CSS 转化成 CommonJS 模块
-                }, {
-                    loader: 'sass-loader' // 将 Sass 编译成 CSS
-                }]
+                use: [
+                    {
+                        loader: 'style-loader' // 将 JS 字符串生成为 style 节点
+                    },
+                    {
+                        loader: 'css-loader' // 将 CSS 转化成 CommonJS 模块
+                    },
+                    {
+                        loader: 'sass-loader' // 将 Sass 编译成 CSS
+                    }
+                ]
             }
         ]
     },
     plugins: [
-        new webpack.optimize.ModuleConcatenationPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'commons',
             filename: 'js/commons.js'
         }),
         new webpack.DefinePlugin({
-            'globalVar': JSON.stringify(global.envConfig.globalVar)
+            globalVar: JSON.stringify(global.envConfig.globalVar)
         }),
         extractCSS,
         new FriendlyErrorsPlugin(),
@@ -176,6 +191,7 @@ switch (global.env) {
                 sourceMap: true
             })
             */
+            new webpack.optimize.ModuleConcatenationPlugin(),
             new UglifyJsPlugin({
                 sourceMap: true,
                 parallel: true
