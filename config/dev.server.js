@@ -1,12 +1,12 @@
 /**
- * 
+ *
  * 开发环境配置文件
- * 
+ *
  */
 
 /*
 * 反向代理设置可以设置多个
-* 
+*
 
 const porxys = [
 	{
@@ -37,11 +37,6 @@ const porxys = [{
 }];
 
 module.exports = {
-    // 定义全局变量
-    globalVar: {
-        'process.env.NODE_ENV': '"development"',
-        'baseURL': ''
-    },
     // 端口
     port: 3002,
     // 反向代理设置
