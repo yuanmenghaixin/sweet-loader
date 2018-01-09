@@ -134,6 +134,7 @@ const webpackConfig = {
         ]
     },
     plugins: [
+        new webpack.optimize.ModuleConcatenationPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'commons',
             filename: 'js/commons.js'
