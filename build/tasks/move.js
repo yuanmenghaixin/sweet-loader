@@ -14,7 +14,7 @@ gulp.task('fonts', function() {
 
 gulp.task('json', function() {
     return gulp
-        .src('src/modules/**/*/json/*.json')
+        .src('src/modules/**/*/json/*.*')
         .pipe(
             rename(function(path) {
                 console.log(path);
