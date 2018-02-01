@@ -1,5 +1,5 @@
 <template>
-  <div class="ajax-page">
+  <div class="request-demo-page">
       <h1>AJAX DEMO</h1>
 
       <h3>AJAX 数据列表</h3>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-    name: 'ajaxDemo',
+    name: 'requestDemo',
     data() {
         return {
             listData: []
@@ -23,11 +23,11 @@ export default {
              * json文件获取规则
              * /json/ + json文件在开发目录中的文件路径以‘_’连接，并且不含 json文件夹自身的路径
              * 例如：
-             * json文件的开发路径为： /src/modules/demo/ajax_demo/json/list.json
-             * ajax调用的路径则是：/json/demo_ajax_demo_list.json
+             * json文件的开发路径为： /src/modules/demo/request/json/list.json
+             * ajax调用的路径则是：/json/demo_request_list.json
              */
             return this.SWXHR
-                .GET('/json/demo_ajax_demo_list.txt', {
+                .GET('/json/demo_request_list.txt', {
                     params: {
                         params1: 'aa',
                         params2: 'bb'

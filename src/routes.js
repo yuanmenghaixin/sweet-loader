@@ -16,9 +16,14 @@ export default {
             component: require('@/modules/demo/ui').default
         },
         {
-            path: '/ajaxdemo',
-            name: 'ajaxDemo',
-            component: require('@/modules/demo/ajax_demo').default
+            path: '/request',
+            name: 'RequestDemo',
+            component: require('@/modules/demo/request').default
+        },
+        {
+            path: '/imagedemo',
+            name: 'ImageDemo',
+            component: require('@/modules/demo/image_demo').default
         }
     ]
 };
