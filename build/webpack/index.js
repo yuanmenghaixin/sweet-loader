@@ -13,11 +13,14 @@ const entry =
     global.env === 'dev'
         ? {
               app: [
+                  'babel-polyfill',
                   'webpack-hot-middleware/client?reload=true&noInfo=true',
                   path.join(process.cwd(), 'src/main.js')
               ]
           }
-        : { app: path.join(process.cwd(), 'src/main.js') };
+        : {
+              app: ['babel-polyfill', path.join(process.cwd(), 'src/main.js')]
+          };
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractCSS = new ExtractTextPlugin({
     filename: 'css/[name].[contenthash].css'
