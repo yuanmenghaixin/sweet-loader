@@ -8,7 +8,7 @@ const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const utils = require('../utils');
 const publicPath = global.env === 'dev' ? '/assets/' : './assets/';
 const devtool =
-    global.env !== 'production' ? 'cheap-module-eval-source-map' : 'source-map';
+    global.env !== 'dev' ? 'source-map' : 'cheap-module-eval-source-map';
 const entry =
     global.env === 'dev'
         ? {
@@ -196,7 +196,7 @@ switch (global.env) {
             */
             new webpack.optimize.ModuleConcatenationPlugin(),
             new UglifyJsPlugin({
-                sourceMap: true,
+                sourceMap: false,
                 parallel: true
             })
         );
