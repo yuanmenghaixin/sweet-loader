@@ -1,11 +1,12 @@
 const path = require('path');
 const config = require('../config');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-exports.assetsPath = function (_path) {
+exports.assetsPath = function(_path) {
     return path.posix.join(config.common.assetsSubDirectory, _path);
 };
 
-exports.cssLoaders = function (options) {
+exports.cssLoaders = function(options) {
     options = options || {};
 
     var cssLoader = {
@@ -58,7 +59,7 @@ exports.cssLoaders = function (options) {
 };
 
 // Generate loaders for standalone style files (outside of .vue)
-exports.styleLoaders = function (options) {
+exports.styleLoaders = function(options) {
     var output = [];
     var loaders = exports.cssLoaders(options);
     for (var extension in loaders) {
@@ -70,3 +71,33 @@ exports.styleLoaders = function (options) {
     }
     return output;
 };
+
+exports.getPublicPath = function() {
+    return global.env === 'dev' ? '/assets/' : './assets/';
+}
+
+exports.getDevtool = function() {
+    return global.env !== 'dev' ? 'source-map' : 'cheap-module-eval-source-map';
+}
+
+exports.getEntry = function() {
+    return global.env === 'dev' ? {
+        app: [
+            'babel-polyfill',
+            'webpack-hot-middleware/client?reload=true&noInfo=true',
+            path.join(process.cwd(), 'src/main.js')
+        ]
+    } : {
+        app: ['babel-polyfill', path.join(process.cwd(), 'src/main.js')]
+    };
+}
+
+exports.getIsProduction = function() {
+    return global.env === 'production';
+}
+
+exports.getExtractCSS = function() {
+    return new ExtractTextPlugin({
+        filename: 'css/[name].[contenthash].css'
+    });
+}
