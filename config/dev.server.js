@@ -38,7 +38,7 @@ const porxys = [{
 
 module.exports = {
     // 端口
-    port: 3002,
+    port: 3015,
     // 反向代理设置
     porxys: porxys
 };
