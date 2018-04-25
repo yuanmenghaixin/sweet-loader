@@ -13,9 +13,9 @@
         <h2>Demo</h2>
 
         <ul>
-            <li><router-link :to="{ path: 'RequestDemo' }">数据请求 Request</router-link></li>
-            <li><router-link :to="{ path: 'ImageDemo' }">图片引用</router-link></li>
-            <li><router-link :to="{ path: 'I18N' }">国际化 i18n</router-link></li>
+            <li><router-link :to="{ name: 'RequestDemo' }">数据请求 Request</router-link></li>
+            <li><router-link :to="{ name: 'ImageDemo' }">图片引用</router-link></li>
+            <li><router-link :to="{ name: 'I18N' }">国际化 i18n</router-link></li>
         </ul>
     </div>
 </template>
