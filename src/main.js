@@ -1,16 +1,12 @@
-import Vue from 'vue';
-import { sweetStore, sweetRouter, SWTOOL } from '@sweetui/sweet';
+import { Vue, sweetStore, sweetRouter } from '@sweetui/sweet';
 import App from '@/modules/demo/app';
-import ElementUI from 'element-ui';
 import Ajax from '@/modules/demo_plugin/ajax';
 import '@/modules/demo_theme/index.scss';
-
-Vue.use(ElementUI);
-Vue.use(SWTOOL);
 
 // ajax启动
 Ajax();
 
+// 国际化启动之后，进行vue实例化
 sweetStore.dispatch('initLang').then(i18n => {
     new Vue({
         el: '#app',
