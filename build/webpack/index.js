@@ -25,7 +25,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractCSS = new ExtractTextPlugin({
     filename: 'css/[name].[contenthash].css'
 });
-const isProduction = global.env === 'production';
+// const isProduction = global.env === 'production';
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const config = require('../../config');
 
@@ -192,14 +192,6 @@ switch (global.env) {
         break;
     default:
         webpackConfig.plugins.unshift(
-            /*
-            new webpack.optimize.UglifyJsPlugin({
-                compress: {
-                    warnings: false
-                },
-                sourceMap: true
-            })
-            */
             new webpack.optimize.ModuleConcatenationPlugin(),
             new UglifyJsPlugin({
                 sourceMap: true,
