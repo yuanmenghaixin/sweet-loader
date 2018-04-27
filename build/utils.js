@@ -11,7 +11,7 @@ exports.cssLoaders = function (options) {
     var cssLoader = {
         loader: 'css-loader',
         options: {
-            minimize: global.envConfig.NODE_ENV === 'production',
+            minimize: true,
             sourceMap: options.sourceMap
         }
     };

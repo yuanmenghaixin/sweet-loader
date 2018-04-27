@@ -6,7 +6,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const utils = require('../utils');
-const publicPath = global.env === 'dev' ? '/assets/' : './assets/';
+const publicPath = global.env === 'dev' ? '/assets/' : '/assets/';
 const devtool =
     global.env !== 'dev' ? 'source-map' : 'cheap-module-eval-source-map';
 const entry =
@@ -83,9 +83,10 @@ const webpackConfig = {
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 options: {
+                    // 取消抽离.vue里的样式
                     loaders: utils.cssLoaders({
-                        sourceMap: isProduction,
-                        extract: isProduction,
+                        sourceMap: false,
+                        extract: false,
                         extractCSS: extractCSS
                     }),
                     transformToRequire: {
@@ -130,25 +131,30 @@ const webpackConfig = {
             },
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader', 'postcss-loader']
+                use: extractCSS.extract({
+                    // 将 JS 字符串生成为 style 节点
+                    fallback: 'style-loader',
+                    // 将 CSS 转化成 CommonJS 模块、将 Sass 编译成 CSS
+                    use: ['css-loader', 'postcss-loader']
+                })
             },
             {
                 test: /\.less$/,
-                use: ['style-loader', 'css-loader', 'less-loader']
+                use: extractCSS.extract({
+                    // 将 JS 字符串生成为 style 节点
+                    fallback: 'style-loader',
+                    // 将 CSS 转化成 CommonJS 模块、将 Sass 编译成 CSS
+                    use: ['css-loader', 'less-loader']
+                })
             },
             {
                 test: /\.scss$/,
-                use: [
-                    {
-                        loader: 'style-loader' // 将 JS 字符串生成为 style 节点
-                    },
-                    {
-                        loader: 'css-loader' // 将 CSS 转化成 CommonJS 模块
-                    },
-                    {
-                        loader: 'sass-loader' // 将 Sass 编译成 CSS
-                    }
-                ]
+                use: extractCSS.extract({
+                    // 将 JS 字符串生成为 style 节点
+                    fallback: 'style-loader',
+                    // 将 CSS 转化成 CommonJS 模块、将 Sass 编译成 CSS
+                    use: ['css-loader', 'sass-loader']
+                })
             }
         ]
     },
@@ -196,7 +202,7 @@ switch (global.env) {
             */
             new webpack.optimize.ModuleConcatenationPlugin(),
             new UglifyJsPlugin({
-                sourceMap: false,
+                sourceMap: true,
                 parallel: true
             })
         );
