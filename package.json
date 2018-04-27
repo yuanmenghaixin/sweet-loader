@@ -17,8 +17,10 @@
         "babel-core": "^6.26.0",
         "babel-eslint": "^7.2.3",
         "babel-loader": "^7.1.2",
+        "babel-plugin-jsx-v-model": "^2.0.3",
         "babel-plugin-syntax-dynamic-import": "^6.18.0",
         "babel-plugin-transform-runtime": "^6.23.0",
+        "babel-plugin-transform-vue-jsx": "^3.7.0",
         "babel-polyfill": "^6.26.0",
         "babel-preset-env": "^1.6.0",
         "babel-preset-stage-2": "^6.24.1",
@@ -69,7 +71,7 @@
         "webpack-hot-middleware": "^2.20.0"
     },
     "dependencies": {
-        "@sweetui/sweet": "^2.1.0",
+        "@sweetui/sweet": "^2.1.12",
         "@sweetui/sweet-style": "^0.2.9"
     },
     "engines": {
