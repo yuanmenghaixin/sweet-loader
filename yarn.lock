@@ -6,9 +6,9 @@
   version "0.2.9"
   resolved "https://registry.yarnpkg.com/@sweetui/sweet-style/-/sweet-style-0.2.9.tgz#13881ff3de5b264fa2f30412d6fb64ae7fd2813b"
 
-"@sweetui/sweet@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@sweetui/sweet/-/sweet-2.1.0.tgz#3faefdbf14798f93dd98009a168832e58a679b2c"
+"@sweetui/sweet@^2.1.12":
+  version "2.1.12"
+  resolved "https://registry.yarnpkg.com/@sweetui/sweet/-/sweet-2.1.12.tgz#949cf05a4fe45fd2f5cc93efcfaaca8717b3ffd4"
   dependencies:
     axios "^0.17.1"
     element-ui "^2.3.6"
@@ -509,6 +509,14 @@ babel-plugin-check-es2015-constants@^6.22.0:
   dependencies:
     babel-runtime "^6.22.0"
 
+babel-plugin-jsx-v-model@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/babel-plugin-jsx-v-model/-/babel-plugin-jsx-v-model-2.0.3.tgz#c396416b99cb1af782087315ae1d3e62e070f47d"
+  dependencies:
+    babel-plugin-syntax-jsx "^6.18.0"
+    html-tags "^2.0.0"
+    svg-tags "^1.0.0"
+
 babel-plugin-syntax-async-functions@^6.8.0:
   version "6.13.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-async-functions/-/babel-plugin-syntax-async-functions-6.13.0.tgz#cad9cad1191b5ad634bf30ae0872391e0647be95"
@@ -532,6 +540,10 @@ babel-plugin-syntax-dynamic-import@^6.18.0:
 babel-plugin-syntax-exponentiation-operator@^6.8.0:
   version "6.13.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-exponentiation-operator/-/babel-plugin-syntax-exponentiation-operator-6.13.0.tgz#9ee7e8337290da95288201a6a57f4170317830de"
+
+babel-plugin-syntax-jsx@^6.18.0:
+  version "6.18.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-6.18.0.tgz#0af32a9a6e13ca7a3fd5069e62d7b0f58d0d8946"
 
 babel-plugin-syntax-object-rest-spread@^6.8.0:
   version "6.13.0"
@@ -777,6 +789,12 @@ babel-plugin-transform-strict-mode@^6.24.1:
   dependencies:
     babel-runtime "^6.22.0"
     babel-types "^6.24.1"
+
+babel-plugin-transform-vue-jsx@^3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-vue-jsx/-/babel-plugin-transform-vue-jsx-3.7.0.tgz#d40492e6692a36b594f7e9a1928f43e969740960"
+  dependencies:
+    esutils "^2.0.2"
 
 babel-polyfill@^6.26.0:
   version "6.26.0"
@@ -3227,6 +3245,10 @@ html-minifier@^3.2.3:
     param-case "2.1.x"
     relateurl "0.2.x"
     uglify-js "3.2.x"
+
+html-tags@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/html-tags/-/html-tags-2.0.0.tgz#10b30a386085f43cede353cc8fa7cb0deeea668b"
 
 html-webpack-plugin@^2.30.1:
   version "2.30.1"
@@ -6303,6 +6325,10 @@ supports-color@^4.0.0, supports-color@^4.2.1, supports-color@^4.4.0:
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-4.5.0.tgz#be7a0de484dec5c5cddf8b3d59125044912f635b"
   dependencies:
     has-flag "^2.0.0"
+
+svg-tags@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/svg-tags/-/svg-tags-1.0.0.tgz#58f71cee3bd519b59d4b2a843b6c7de64ac04764"
 
 svgo@^0.7.0:
   version "0.7.2"
