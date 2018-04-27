@@ -62,16 +62,15 @@
         "style-loader": "^0.18.2",
         "uglifyjs-webpack-plugin": "^1.1.0",
         "url-loader": "^0.5.9",
-        "vue-loader": "^13.5.0",
+        "vue-loader": "^13.7.1",
         "vue-style-loader": "^3.0.3",
-        "vue-template-compiler": "^2.5.9",
         "webpack": "^3.8.1",
         "webpack-dev-middleware": "^1.12.0",
         "webpack-hot-middleware": "^2.20.0"
     },
     "dependencies": {
-        "@sweetui/sweet": "^2.0.12",
-        "@sweetui/sweet-style": "^0.0.5"
+        "@sweetui/sweet": "^2.1.0",
+        "@sweetui/sweet-style": "^0.2.9"
     },
     "engines": {
         "node": ">= 6.0.0",

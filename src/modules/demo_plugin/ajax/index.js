@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { sweetStore, SWXHR, SWTOOL } from '@sweetui/sweet';
+import { sweetStore, SWXHR } from '@sweetui/sweet';
 
 const SWXHR_OPTIONS = {
     config: {
@@ -30,7 +30,7 @@ const SWXHR_OPTIONS = {
 };
 
 const Ajax = function() {
-    return new SWXHR(SWXHR_OPTIONS, sweetStore, SWTOOL);
+    return new SWXHR(SWXHR_OPTIONS, sweetStore);
 };
 
 export default Ajax;
