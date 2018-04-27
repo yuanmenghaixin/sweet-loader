@@ -22,10 +22,11 @@ const entry =
               app: ['babel-polyfill', path.join(process.cwd(), 'src/main.js')]
           };
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const isProduction = global.env === 'production';
 const extractCSS = new ExtractTextPlugin({
-    filename: 'css/[name].[contenthash].css'
+    filename: 'css/[name].[contenthash].css',
+    disable: !isProduction
 });
-// const isProduction = global.env === 'production';
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const config = require('../../config');
 
