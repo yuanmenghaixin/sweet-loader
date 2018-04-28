@@ -25,7 +25,7 @@ import Clickoutside from 'element-ui/src/utils/clickoutside';
 
 
 export default {
-    name: 'hello',
+    name: 'home',
     beforeCreate() {
         // 注册当前模块到Store
         if (!this.$store.state.home) {
