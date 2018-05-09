@@ -72,7 +72,7 @@
     },
     "dependencies": {
         "@sweetui/sweet": "^2.1.2",
-        "@sweetui/sweet-style": "^0.3.3"
+        "@sweetui/sweet-style": "^0.3.31"
     },
     "engines": {
         "node": ">= 6.0.0",
