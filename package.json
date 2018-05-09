@@ -71,8 +71,8 @@
         "webpack-hot-middleware": "^2.20.0"
     },
     "dependencies": {
-        "@sweetui/sweet": "^2.1.12",
-        "@sweetui/sweet-style": "^0.2.9"
+        "@sweetui/sweet": "^2.1.2",
+        "@sweetui/sweet-style": "^0.3.3"
     },
     "engines": {
         "node": ">= 6.0.0",

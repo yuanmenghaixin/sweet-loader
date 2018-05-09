@@ -1,7 +1,6 @@
 // element-ui 所有初始化参数，请查看 var.scss。请基于var.scss内的变量在本文件进行修改
-
-// 引入sweet框架样式
 @import '~@sweetui/sweet-style/config.scss';
-
-// 设置element-ui 字体路径
-$--font-path: '~element-ui/lib/theme-chalk/fonts';
+// 引入自定义主题风格变量
+@import './vars/index.scss';
+// 必须在@sweetui/sweet-style和自定义主题风格 后引入element-ui全变量集
+@import "~element-ui/packages/theme-chalk/src/common/var.scss";
