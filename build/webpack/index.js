@@ -154,7 +154,7 @@ const webpackConfig = {
                     // 将 JS 字符串生成为 style 节点
                     fallback: 'style-loader',
                     // 将 CSS 转化成 CommonJS 模块、将 Sass 编译成 CSS
-                    use: ['css-loader', 'sass-loader']
+                    use: ['css-loader', 'fast-sass-loader']
                 })
             }
         ]
