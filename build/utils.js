@@ -1,5 +1,6 @@
 const path = require('path');
 const config = require('../config');
+const autoprefixer = require('autoprefixer');
 
 exports.assetsPath = function (_path) {
     return path.posix.join(config.common.assetsSubDirectory, _path);
@@ -70,3 +71,30 @@ exports.styleLoaders = function (options) {
     }
     return output;
 };
+
+
+exports.postcssPlugins = function (options) {
+    return [
+        autoprefixer({
+            browsers: [
+                '> 0.1%',
+                "not ie <= 8",
+                'Firefox >= 20',
+                'last 2 versions',
+                'Android >= 4.0',
+                'iOS 7'
+            ]
+        })
+    ]
+}
+
+exports.postcssLoaders = function () {
+    return {
+        loader: 'postcss-loader',
+        options: {
+            config: {
+                path: path.join(process.cwd(), 'build/postcss.config.js')
+            }
+        }
+    }
+}

@@ -84,6 +84,7 @@ const webpackConfig = {
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 options: {
+                    postcss: utils.postcssPlugins(),
                     // 取消抽离.vue里的样式
                     loaders: utils.cssLoaders({
                         sourceMap: false,
@@ -136,7 +137,7 @@ const webpackConfig = {
                     // 将 JS 字符串生成为 style 节点
                     fallback: 'style-loader',
                     // 将 CSS 转化成 CommonJS 模块、将 Sass 编译成 CSS
-                    use: ['css-loader', 'postcss-loader']
+                    use: ['css-loader', utils.postcssLoaders()]
                 })
             },
             {
@@ -145,7 +146,7 @@ const webpackConfig = {
                     // 将 JS 字符串生成为 style 节点
                     fallback: 'style-loader',
                     // 将 CSS 转化成 CommonJS 模块、将 Sass 编译成 CSS
-                    use: ['css-loader', 'less-loader']
+                    use: ['css-loader', utils.postcssLoaders(), 'less-loader']
                 })
             },
             {
@@ -154,7 +155,7 @@ const webpackConfig = {
                     // 将 JS 字符串生成为 style 节点
                     fallback: 'style-loader',
                     // 将 CSS 转化成 CommonJS 模块、将 Sass 编译成 CSS
-                    use: ['css-loader', 'fast-sass-loader']
+                    use: ['css-loader', utils.postcssLoaders(), 'fast-sass-loader']
                 })
             }
         ]
