@@ -5,7 +5,7 @@ const gulp       = require('gulp');
 const requireDir = require('require-dir');
 
 requireDir('./node_modules/@sweetui/sweet-sdk/build/tasks/', { recurse: true });
-
+// requireDir('./sweet-sdk/build/tasks/', { recurse: true });
 
 console.log('  ');
 console.log('   _____                       __     __  __ ____');

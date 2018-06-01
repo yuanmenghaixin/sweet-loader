@@ -13,7 +13,7 @@
         "locale": "gulp locale --env dev"
     },
     "devDependencies": {
-        "@sweetui/sweet-sdk": "^2.0.0"
+        "@sweetui/sweet-sdk": "^2.0.2"
     },
     "dependencies": {
         "@sweetui/sweet": "^2.1.14",
