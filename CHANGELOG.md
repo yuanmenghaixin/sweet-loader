@@ -1,5 +1,15 @@
 # 更新日志 CHANGELOG
 
+## 2.1.0-beta - 2018/06/13
+
+### - New
+- `config`配置文件的代理配置更改，支持正则
+- `build`文件的逻辑全部整合入@sweetui/sweet-sdk中
+- `gulpfile.js`舍弃
+- 开发环境下搭建在koa平台上
+- gulp任务剥离出来
+- `config/index`增加配置项`assetsPath`字段，配置资源路径的前缀，解决项目可能运行在子文件夹下。
+
 ## 2.0.0-release - 2018/04/27
 
 ### - New
