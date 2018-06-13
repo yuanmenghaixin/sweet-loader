@@ -5,15 +5,21 @@
     "private": true,
     "entry": {},
     "scripts": {
-        "start": "gulp --env dev",
-        "build": "gulp build --env production",
-        "build-dev": "gulp build --env production-dev",
-        "build-test": "gulp build --env production-test",
-        "build-pre": "gulp build --env production-pre",
-        "locale": "gulp locale --env dev"
+        "sweet-webpack": "webpack --progress --config ./node_modules/@sweetui/sweet-sdk",
+        "sweet-dll": "webpack --progress --config ./node_modules/@sweetui/sweet-sdk/dll",
+        "sweet-server": "sweet-dev-server",
+        "presweet-dll": "rimraf dist",
+        "presweet-webpack": "npm run sweet-dll",
+        "presweet-server": "npm run sweet-dll",
+        "start": "cross-env NODE_ENV=dev                     npm run sweet-server",
+        "build": "cross-env NODE_ENV=production              npm run sweet-webpack",
+        "build-dev": "cross-env NODE_ENV=production-dev      npm run sweet-webpack",
+        "build-test": "cross-env NODE_ENV=production-test    npm run sweet-webpack",
+        "build-pre": "cross-env NODE_ENV=production-pre      npm run sweet-webpack",
+        "test": "cross-env NODE_ENV=dev node ./sweet-sdk/build/koa.server.js"
     },
     "devDependencies": {
-        "@sweetui/sweet-sdk": "^2.0.2"
+        "@sweetui/sweet-sdk": "^2.1.11-beta"
     },
     "dependencies": {
         "@sweetui/sweet": "^2.1.14",

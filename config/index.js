@@ -15,6 +15,11 @@ let config = {
     dev: {
         NODE_ENV: '"dev"',
         /**
+         * 打包完成后index.html中引入的资源的相对路径
+         * 默认为'/assets/' 
+         */
+        // assetsPath: '/assets/',
+        /**
          * 定义全局变量
          * 可以在js中通过 globalVar.baseUrl获取
          */

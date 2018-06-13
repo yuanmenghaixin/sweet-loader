@@ -28,17 +28,23 @@ const porxys = [
 */
 
 // 反向代理设置
-const porxys = [{
-    paths: ['/management-center', '/platform', '/user-center'],
+const proxys = [{
+    paths: /^\/sso1/,
     option: {
-        target: 'http://10.200.188.30:11300',
+        target: 'http://www.baidu.com',
+        changeOrigin: true
+    }
+},{
+    paths: /^\/(ssoconfiguration|role|login|session|application|user|org|user-center|adms|data|permission|ehr)/,
+    option: {
+        target: 'http://10.86.87.180:8011/',
         changeOrigin: true
     }
 }];
 
 module.exports = {
     // 端口
-    port: 3005,
+    port: 3004,
     // 反向代理设置
-    porxys: porxys
+    proxys: proxys
 };
