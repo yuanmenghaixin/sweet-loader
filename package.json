@@ -22,7 +22,7 @@
         "@sweetui/sweet-sdk": "^2.1.11-beta"
     },
     "dependencies": {
-        "@sweetui/sweet": "^2.1.14",
+        "@sweetui/sweet": "^2.1.16",
         "@sweetui/sweet-style": "^0.3.33"
     },
     "engines": {
